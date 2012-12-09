@@ -163,11 +163,11 @@ var erroValidacao = function(data) {
 <div id="Errocartao"></div>
 <?php if($opcaopg == "DebitoBancario"){?>
 Seu pedido está quase concluído, por favor clique no link abaixo para ser redirecionado ao seu banco.</br></br>
-<button type="button" title="Finalizar compra" class="button btn-proceed-checkout btn-checkout" onclick="window.location='https://www.moip.com.br/Instrucao.do?token=<?php echo $url ?>'"><span><span>Ir ao Banco</span></span></button></a></div>
+<button type="button" title="Finalizar compra" class="button btn-proceed-checkout btn-checkout" onclick="window.location='https://www.moip.com.br/Instrucao.do?token=<?php echo $url ?>'"><span><span>Ir ao Banco</span></span></button></div>
 <?php } ?>
 <?php if($opcaopg == "BoletoBancario"){?>
 </br>Clique no link abaixo para imprimir o seu boleto e concluir seu pedido.</br></br>
-<button type="button" title="Finalizar compra" class="button btn-proceed-checkout btn-checkout" onclick="window.location='https://www.moip.com.br/Instrucao.do?token=<?php echo $url ?>'"><span><span>Finalizar compra</span></span></button>
+<button type="button" title="Finalizar compra" class="button btn-proceed-checkout btn-checkout" onclick="window.location='https://www.moip.com.br/Instrucao.do?token=<?php echo $url ?>'"><span><span>Finalizar compra</span></span></button></div>
 <?php } ?>
 <?php if($opcaopg == "CartaoCredito"){?>
 </br></br>
