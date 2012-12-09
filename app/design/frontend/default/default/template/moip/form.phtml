@@ -24,18 +24,18 @@ text-align: center;"><img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/lo
 
             <?php if (in_array("CartaoCredito", $standad->getFormasPagamento()) ): ?>
 <label id="meios">
-<input onclick="cartao();jQuery(this).parent().find('input').trigger('click')" type="radio" id="forma_pagamento" name="payment[forma_pagamento]" title="forma_pagamento" value="CartaoCredito" class="radio payment_method_handle validation-passed"  autocomplete="off">
-<img  onclick="jQuery(this).parent().find('input').trigger('click');" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/abacartao.png'); ?>" id="imagemcartao" alt="Cartão de Crédito"   />
+<input onclick="cartao();" type="radio" id="forma_pagamento" name="payment[forma_pagamento]" title="forma_pagamento" value="CartaoCredito" class="radio payment_method_handle validation-passed"  autocomplete="off">
+<img  onclick=";" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/abacartao.png'); ?>" id="imagemcartao" alt="Cartão de Crédito"   />
 </label>
             <?php endif; ?>
             <?php if (in_array("BoletoBancario", $standad->getFormasPagamento()) ): ?>
 <label id="meios">
-<input onclick="boleto();jQuery(this).parent().find('input').trigger('click')" type="radio" id="forma_pagamento" name="payment[forma_pagamento]" title="forma_pagamento" value="BoletoBancario" class="radio payment_method_handle validation-passed" autocomplete="off">
-<img onclick="jQuery(this).parent().find('input').trigger('click')" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/ababoleto.png'); ?>"  id="imageboleto" alt="Boleto Bancário"   /></label>
+<input onclick="boleto();" type="radio" id="forma_pagamento" name="payment[forma_pagamento]" title="forma_pagamento" value="BoletoBancario" class="radio payment_method_handle validation-passed" autocomplete="off">
+<img onclick="" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/ababoleto.png'); ?>"  id="imageboleto" alt="Boleto Bancário"   /></label>
            <?php endif; ?>
             <?php if (in_array("DebitoBancario", $standad->getFormasPagamento()) ): ?>
-<label id="meios"><input onclick="transf();jQuery(this).parent().find('input').trigger('click')" type="radio" id="forma_pagamento" name="payment[forma_pagamento]" title="forma_pagamento" value="DebitoBancario" class="radio payment_method_handle validation-passed" autocomplete="off">
-<img onclick="jQuery(this).parent().find('input').trigger('click');" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/abatransf.png'); ?>"  id="imagemtrans" alt="Transferência Bancária" /></label>
+<label id="meios"><input onclick="transf();" type="radio" id="forma_pagamento" name="payment[forma_pagamento]" title="forma_pagamento" value="DebitoBancario" class="radio payment_method_handle validation-passed" autocomplete="off">
+<img onclick=";" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/abatransf.png'); ?>"  id="imagemtrans" alt="Transferência Bancária" /></label>
             <?php endif; ?>
 
 </div>
@@ -48,11 +48,11 @@ text-align: center;"><img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/lo
 <div id="dadosformcartao">
         <div id="bandeiramoipdiv">
 		<div id="bandeiramoipa">
-			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio" name="payment[credito_instituicao]" onclick="visa();jQuery(this).parent().find('input').trigger('click')"  value="Visa"><img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moipvisa.png'); ?>" onclick="jQuery(this).parent().find('input').trigger('click');"   id="Visa" alt="Visa" border="0"></label></div>
-			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio"  name="payment[credito_instituicao]" onclick="mastercard();jQuery(this).parent().find('input').trigger('click')"  value="Mastercard"><img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moipmaster.png'); ?>" onclick="jQuery(this).parent().find('input').trigger('click')" id="Mastercard" alt="Mastercard" border="0"></label></div>
-			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio"  name="payment[credito_instituicao]" onclick="americanexpress();jQuery(this).parent().find('input').trigger('click')"  value="AmericanExpress"><img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moipamerican.png'); ?>" onclick="jQuery(this).parent().find('input').trigger('click')" id="AmericanExpress" alt="AmericanExpress" border="0"></label></div>
-			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio"  name="payment[credito_instituicao]" onclick="diners();jQuery(this).parent().find('input').trigger('click')"  value="Diners"> <img onclick="jQuery(this).parent().find('input').trigger('click')" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moipdiners.png'); ?>" id="Diners" alt="Diners" border="0"></label></div>
-			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio"  name="payment[credito_instituicao]" onclick="hipercard();jQuery(this).parent().find('input').trigger('click')"  value="Hipercard"><img onclick="jQuery(this).parent().find('input').trigger('click')" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moiphiper.png'); ?>" id="Hipercard" alt="Hipercard" border="0"></label></div>
+			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio" name="payment[credito_instituicao]" onclick="visa();"  value="Visa"><img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moipvisa.png'); ?>" onclick=";"   id="Visa" alt="Visa" border="0"></label></div>
+			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio"  name="payment[credito_instituicao]" onclick="mastercard();"  value="Mastercard"><img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moipmaster.png'); ?>" onclick="" id="Mastercard" alt="Mastercard" border="0"></label></div>
+			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio"  name="payment[credito_instituicao]" onclick="americanexpress();"  value="AmericanExpress"><img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moipamerican.png'); ?>" onclick="" id="AmericanExpress" alt="AmericanExpress" border="0"></label></div>
+			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio"  name="payment[credito_instituicao]" onclick="diners();"  value="Diners"> <img onclick="" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moipdiners.png'); ?>" id="Diners" alt="Diners" border="0"></label></div>
+			<div id="bandeiramoipaa"><label id="band"><input id="bandeiramoip" type="radio"  name="payment[credito_instituicao]" onclick="hipercard();"  value="Hipercard"><img onclick="" src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/moiphiper.png'); ?>" id="Hipercard" alt="Hipercard" border="0"></label></div>
 		</div>
 </div>
 <div id="checkout-payment-bandeira"></div>
@@ -193,19 +193,19 @@ $data->getGrandTotal();
         </div>
         <div id="moip_debito_bandeiras">
         <label >
-        <input type="radio" id="debito_instituicao" name="payment[debito_instituicao]"  onclick="bb();jQuery(this).parent().find('input').trigger('click')"  value="BancoDoBrasil" autocomplete="off">
+        <input type="radio" id="debito_instituicao" name="payment[debito_instituicao]"  onclick="bb();"  value="BancoDoBrasil" autocomplete="off">
         <img  src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/bb.png'); ?>"  alt="Banco do Brasil" id="debbb" >
         </label>
         <label onclick="bradesco()">
-        <input type="radio" id="debito_instituicao" name="payment[debito_instituicao]" onclick="bradesco();jQuery(this).parent().find('input').trigger('click')" value="Bradesco" autocomplete="off">
+        <input type="radio" id="debito_instituicao" name="payment[debito_instituicao]" onclick="bradesco();" value="Bradesco" autocomplete="off">
         <img  src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/bradesco.png'); ?>" id="debbradesco" alt="Bradesco" >
         </label>
         <label >
-        <input type="radio" id="debito_instituicao" name="payment[debito_instituicao]" onclick="itau();jQuery(this).parent().find('input').trigger('click')"  value="Itau" autocomplete="off">
+        <input type="radio" id="debito_instituicao" name="payment[debito_instituicao]" onclick="itau();"  value="Itau" autocomplete="off">
         <img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/itau.png'); ?>" id="debitau" alt="Itaú"  >
         </label>
         <label >
-        <input type="radio" id="debito_instituicao" name="payment[debito_instituicao]" onclick="banrisul();jQuery(this).parent().find('input').trigger('click')" value="Banrisul"  autocomplete="off">
+        <input type="radio" id="debito_instituicao" name="payment[debito_instituicao]" onclick="banrisul();" value="Banrisul"  autocomplete="off">
         <img src="<?php echo $this->getSkinUrl('o2ti_moip/imagem/banrisul.png'); ?>" id="Banrisul" alt="Banrisul"  >
         </label>
         </div>
