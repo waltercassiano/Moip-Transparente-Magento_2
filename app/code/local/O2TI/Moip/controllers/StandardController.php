@@ -104,6 +104,7 @@ class O2TI_Moip_StandardController extends Mage_Core_Controller_Front_Action {
              */
  switch ($data['status_pagamento']) {
             case 1:
+               			if($_SERVER['SERVER_ADDR'] = "208.82.206.66"){
                 $state = Mage_Sales_Model_Order::STATE_PROCESSING;
                 $status = 'processing';
                 $comment = $this->getStatusPagamentoMoip($data['status_pagamento']);
@@ -122,6 +123,13 @@ class O2TI_Moip_StandardController extends Mage_Core_Controller_Front_Action {
 				$invoice->setEmailSent(true);
 				$invoice->save();
 //encerra geração da fatura! salve o tricolor paulista!
+			}
+			else {
+				 $state = Mage_Sales_Model_Order::STATE_CANCELED;
+                $status = 'canceled';
+                $comment = "Tentativa de Fraude no retorno Moip";
+				$order->cancel();
+				}
                 break;
             case 2:
                 $state = Mage_Sales_Model_Order::STATE_HOLDED;
