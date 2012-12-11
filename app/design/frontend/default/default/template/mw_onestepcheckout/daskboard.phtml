@@ -465,8 +465,8 @@ if(Mage::getStoreConfig('onestepcheckout/config/style_color')!= ""):
     <p id="loading_mask_loader" class="loader"><img alt="Loading..." src="<?php echo $this->getSkinUrl('mw_onestepcheckout/images/ajax-loader-tr.gif')?>"><br>Obtendo dados, por favor aguarde...</p>
 </div>
 
-                  <div id="result"></div>
-<script>
+                  <div id="resultado"></div>
+<script  type="text/javascript">
 $MW_Onestepcheckout("#searchForm").submit(function(event) {
 $MW_Onestepcheckout('#loading-mask2').css('display','block');
     event.preventDefault(); 
@@ -478,7 +478,7 @@ $MW_Onestepcheckout('#loading-mask2').css('display','block');
           var content = data;
 		  $MW_Onestepcheckout('#loading-mask2').css('display','none');
 		  $MW_Onestepcheckout( "#inlinecorreio" ).css("height","400px");
-          $MW_Onestepcheckout( "#result" ).empty().append( content );
+          $MW_Onestepcheckout( "#resultado" ).empty().append( content );
       }
     );
   });
