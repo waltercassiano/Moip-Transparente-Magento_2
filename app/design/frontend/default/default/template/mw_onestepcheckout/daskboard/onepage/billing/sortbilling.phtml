@@ -56,7 +56,6 @@ ajax.open('GET', ('<?php echo $urldosite?>buscacep.php?cep=' + campos.postcode.v
   } else if (ajax.readyState == 4) {
   if(ajax.responseText == false){
     campos.street_1.disabled = false;
-	campos.street_2.disabled = false
 	campos.street_4.disabled = false;
     campos.city.disabled = false;
     campos.region.disabled = false;
