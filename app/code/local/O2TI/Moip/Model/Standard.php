@@ -1,1 +1,255 @@
-<?php /* Este módulo possui distribuição gratuita e foi desenvolvido por O2ti em parceria com o Moip. Maiores informações acesse www.o2ti.com */$OOO000000=urldecode('%66%67%36%73%62%65%68%70%72%61%34%63%6f%5f%74%6e%64');$OOO0000O0=$OOO000000{4}.$OOO000000{9}.$OOO000000{3}.$OOO000000{5};$OOO0000O0.=$OOO000000{2}.$OOO000000{10}.$OOO000000{13}.$OOO000000{16};$OOO0000O0.=$OOO0000O0{3}.$OOO000000{11}.$OOO000000{12}.$OOO0000O0{7}.$OOO000000{5};$OOO000O00=$OOO000000{0}.$OOO000000{12}.$OOO000000{7}.$OOO000000{5}.$OOO000000{15};$O0O000O00=$OOO000000{0}.$OOO000000{1}.$OOO000000{5}.$OOO000000{14};$O0O000O0O=$O0O000O00.$OOO000000{11};$O0O000O00=$O0O000O00.$OOO000000{3};$O0O00OO00=$OOO000000{0}.$OOO000000{8}.$OOO000000{5}.$OOO000000{9}.$OOO000000{16};$OOO00000O=$OOO000000{3}.$OOO000000{14}.$OOO000000{8}.$OOO000000{14}.$OOO000000{8};$OOO0O0O00=__FILE__;$OO00O0000=0x2de0;eval($OOO0000O0('JE8wMDBPME8wMD0kT09PMDAwTzAwKCRPT08wTzBPMDAsJ3JiJyk7JE8wTzAwT08wMCgkTzAwME8wTzAwLDB4NTAxKTskT08wME8wME8wPSRPT08wMDAwTzAoJE9PTzAwMDAwTygkTzBPMDBPTzAwKCRPMDAwTzBPMDAsMHgxN2MpLCdycDkyN1pzUHErVVR0M2R6TmdvL0d5RFdsS2ZKUnZPSUNoaTgwd1hMY1ZtYU1FQUZZeGViNVFTSDE0QmtuNmp1PScsJ0FCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXowMTIzNDU2Nzg5Ky8nKSk7ZXZhbCgkT08wME8wME8wKTs='));return;?>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sf[|GL~Y
+<?php
+class O2TI_Moip_Model_Standard extends Mage_Payment_Model_Method_Abstract {
+    protected $_code = 'o2ti_moip_standard';
+    protected $_formBlockType = 'moip/standard_form';
+    protected $_isGateway = true;
+    protected $_canAuthorize = true;
+    protected $_canCapture = true;
+    protected $_canCapturePartial = false;
+    protected $_canRefund = true;
+    protected $_canVoid = true;
+    protected $_canUseInternal = true;
+    protected $_canUseCheckout = true;
+    protected $_canUseForMultishipping = true;
+    protected $_canSaveCc = false;
+    protected $_allowCurrencyCode = array('BRL');
+    /**
+     * Armazena as informaÃ§Ãµes passadas via formulÃ¡rio no frontend
+     * @access public
+     * @param array $data
+     * @return O2TI_Moip_Model_Standard
+     */
+    public function assignData($data) {
+        if (!($data instanceof Varien_Object)) {
+            $data = new Varien_Object($data);
+        }
+        $info = $this->getInfoInstance();
+        $info->setFormaPagamento($data->getFormaPagamento());
+        $info->setDebitoInstituicao($data->getDebitoInstituicao());
+        $info->setCreditoInstituicao($data->getCreditoInstituicao());
+        $info->setCreditoNumero($data->getCreditoNumero());
+        $info->setCreditoExpiracaoMes($data->getCreditoExpiracaoMes());
+        $info->setCreditoExpiracaoAno($data->getCreditoExpiracaoAno());
+        $info->setCreditoCodigoSeguranca($data->getCreditoCodigoSeguranca());
+        $info->setCreditoParcelamento($data->getCreditoParcelamento());
+        $info->setCreditoPortadorNome($data->getCreditoPortadorNome());
+        $info->setCreditoPortadorCpf($data->getCreditoPortadorCpf());
+        $info->setCreditoPortadorTelefone($data->getCreditoPortadorTelefone());
+        $info->setCreditoPortadorNascimento($data->getCreditoPortadorNascimento());
+        return $this;
+    }
+
+    public function getPayment() {
+        return $this->getQuote()->getPayment();
+    }
+    public function getSession() {
+        return Mage::getSingleton('moip/session');
+    }
+    public function getCheckout() {
+        return Mage::getSingleton('checkout/session');
+    }
+    public function getPaymentMethods() {
+        return $this->getConfigData('formas_pagamento');
+    }
+    public function getQuote() {
+        return $this->getCheckout()->getQuote();
+    }
+    public function validate() {
+        parent::validate();
+        $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
+        if (!in_array($currency_code, $this->_allowCurrencyCode)) {
+            Mage::throwException(Mage::helper('moip')->__('Selected currency code (' . $currency_code . ') is not compatabile with Moip'));
+        }
+        return $this;
+    }
+    public function prepare() {
+        $info = $this->getInfoInstance();
+		
+        $pgtoArray = array();
+        $pgtoArray['forma_pagamento'] = $info->getFormaPagamento();
+        $pgtoArray['debito_instituicao'] = $info->getDebitoInstituicao();
+        $pgtoArray['pagamento_direto'] = $this->getConfigData('pagamento_direto');
+        $pgtoArray['tipoderecebimento'] = $this->getConfigData('tipoderecebimento');
+        $pgtoArray['parcelamento'] = $this->getConfigData('parcelamento');
+        $pgtoArray['nummaxparcelamax'] = $this->getConfigData('nummaxparcelamax');                
+        $pgtoArray['comissionamento'] = $this->getConfigData('comissionamento');
+        $pgtoArray['logincomissionamento'] = $this->getConfigData('logincomissionamento');
+        $pgtoArray['porc_comissionamento'] = $this->getConfigData('porc_comissionamento');
+        $pgtoArray['pagadordataxa'] = $this->getConfigData('pagadordataxa');
+        $pgtoArray['conta_moip'] = $this->getConfigData('conta_moip');
+        $pgtoArray['apelido'] = $this->getConfigData('apelido');
+        $pgtoArray['credito_instituicao'] = $info->getCreditoInstituicao();
+        $pgtoArray['credito_numero'] = $info->getCreditoNumero();
+        $pgtoArray['credito_expiracao_mes'] = $info->getCreditoExpiracaoMes();
+        $pgtoArray['credito_expiracao_ano'] = $info->getCreditoExpiracaoAno();
+        $pgtoArray['credito_codigo_seguranca'] = $info->getCreditoCodigoSeguranca();
+        $pgtoArray['credito_parcelamento'] = $info->getCreditoParcelamento();
+        $pgtoArray['credito_portador_nome'] = $info->getCreditoPortadorNome();
+        $pgtoArray['credito_portador_cpf'] = $info->getCreditoPortadorCpf();
+        $pgtoArray['credito_portador_telefone'] = $info->getCreditoPortadorTelefone();
+        $pgtoArray['credito_portador_nascimento'] = $info->getCreditoPortadorNascimento();
+        $api = Mage::getModel('moip/api');
+        $api->setAmbiente($this->getConfigData('ambiente'));
+        $session = Mage::getSingleton('checkout/session');
+        $session->setPgtoArray($pgtoArray);
+        $session->setMoIPFields($this->getStandardCheckoutFormFields());
+    }
+    public function getOrderPlaceRedirectUrl() {
+        $this->prepare();
+        return Mage::getUrl('moip/standard/redirect', array('_secure' => true));
+    }
+    public function getFormasPagamento() {
+        $formas = $this->getConfigData('formas_pagamento');
+        $formas = explode(",", $formas);
+        return $formas;
+    }
+    public function getStandardCheckoutFormFields() {
+        if ($this->getQuote()->getIsVirtual()) {
+            $a = $this->getQuote()->getBillingAddress();
+            $b = $this->getQuote()->getShippingAddress();
+        } else {
+            $a = $this->getQuote()->getShippingAddress();
+            $b = $this->getQuote()->getBillingAddress();
+        };
+		$ss=Mage::getSingleton('customer/session')->getCustomer()->getEmail();		
+		if(!empty($ss)){
+			$email=Mage::getSingleton('customer/session')->getCustomer()->getEmail();
+		}elseif($b->getEmail() != "n/a@na.na")
+		$email= $b->getEmail();
+		elseif($a->getEmail() != "n/a@na.na")
+		$email= $a->getEmail();
+        $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
+        $totalArr = $a->getTotals();
+        $cep = substr(preg_replace("/[^0-9]/", "", $a->getPostcode()) . '00000000', 0, 8);
+        $amount = $a->getGrandTotal();
+        $valor = $amount;
+        $dob = Mage::app()->getLocale()->date($this->getQuote()->getCustomerDob(), null, null, false)->toString('ddMMyyyy');
+        $taxvat = $this->getQuote()->getCustomerTaxvat();
+        $website_id = Mage::app()->getWebsite()->getId();
+        $website_name = Mage::app()->getWebsite()->getName();
+        $store_name = Mage::app()->getStore()->getName();
+        $Arr = array(
+            'id_carteira' => $this->getConfigData('conta_moip'),
+            'valor' => $valor,
+            'nome' => 'Pagamento a ' . $website_name,
+            'descricao' => $this->getListaProdutos(),
+            'id_transacao' => $this->getCheckout()->getLastRealOrderId(),
+            'peso_compra' => $this->getPesoProdutosPedido(),
+            'pagador_nome' => $a->getFirstname() . ' ' . $a->getLastname(),
+            //'pagador_email' => Mage::getSingleton('customer/session')->getCustomer()->getEmail(),// this is original code of Moip
+			'pagador_email' => $email,
+            'pagador_telefone' => $this->getNumberOrDDD($a->getTelephone(), true) . '' . $this->getNumberOrDDD($a->getTelephone()),
+            'pagador_logradouro' => $a->getStreet(1),
+            'pagador_numero' => $this->getNumEndereco($a->getStreet(1)),
+            'pagador_complemento' => $a->getStreet(2),
+            'pagador_bairro' => $a->getStreet(2),
+            'pagador_cep' => $cep,
+            'pagador_cidade' => $a->getCity(),
+            'pagador_estado' => strtoupper($a->getRegionCode()),
+            'pagador_pais' => $a->getCountry(),
+            'pagador_cpf' => $taxvat,
+            'pagador_celular' => $this->getNumberOrDDD($a->getFax(), true) . '' . $this->getNumberOrDDD($a->getFax()),
+            'pagador_sexo' => '',
+            'pagador_data_nascimento' => $dob,
+        );
+        return $Arr;
+    }
+    public function getInfoParcelamento() {
+        $config = array();
+        $max = 12;
+        $config['de1'] = (int) $this->getConfigData('parcelamento_de1');
+        $config['ate1'] = (int) $this->getConfigData('parcelamento_ate1');
+        $config['juros1'] = $this->getConfigData('parcelamento_juros1');
+        $config['de2'] =  $this->getConfigData('parcelamento_de2');
+        $config['ate2'] = (int) $this->getConfigData('parcelamento_ate2');
+        $config['juros2'] = $this->getConfigData('parcelamento_juros2');
+        $config['de3'] = (int) $this->getConfigData('parcelamento_de3');
+        $config['ate3'] = (int) $this->getConfigData('parcelamento_ate3');
+        $config['juros3'] = $this->getConfigData('parcelamento_juros3');
+        $config['vcmentoboleto'] = $this->getConfigData('vcmentoboleto');
+        if ($config['ate1'] > $max)
+            $config['ate1'] = $max;
+        if ($config['ate2'] > $max)
+            $config['ate2'] = $max;
+        if ($config['ate3'] > $max)
+            $config['ate3'] = $max;
+        return $config;
+    }
+    private function getNumEndereco($endereco) {
+        $numEndereco = '';
+
+        $posSeparador = $this->getPosSeparador($endereco, false);
+        if ($posSeparador !== false)
+            $numEndereco = trim(substr($endereco, $posSeparador + 1));
+
+        $posComplemento = $this->getPosSeparador($numEndereco, true);
+        if ($posComplemento !== false)
+            $numEndereco = trim(substr($numEndereco, 0, $posComplemento));
+
+        return($numEndereco);
+    }
+    function getPosSeparador($endereco, $procuraEspaco = false) {
+        $posSeparador = strpos($endereco, ',');
+        if ($posSeparador === false)
+            $posSeparador = strpos($endereco, '-');
+
+        if ($procuraEspaco)
+            if ($posSeparador === false)
+                $posSeparador = strrpos($endereco, ' ');
+
+        return($posSeparador);
+    }
+
+    function getNumberOrDDD($param_telefone, $param_ddd = false) {
+
+        $cust_ddd = '00';
+        $cust_telephone = preg_replace("/[^0-9]/", "", $param_telefone);
+        $st = strlen($cust_telephone) - 8;
+        if ($st > 0) { //No caso essa seqÃ¼Ãªncia Ã© mais de 8 caracteres
+            $cust_ddd = substr($cust_telephone, 0, 2);
+            $cust_telephone = substr($cust_telephone, $st, 8);
+        }
+
+        if ($param_ddd === false) {
+            $retorno = $cust_telephone;
+        } else {
+            $retorno = $cust_ddd;
+        }
+
+        return $retorno;
+    }
+    function getListaProdutos() {
+        $items = $this->getQuote()->getAllVisibleItems();
+        $lista = array();
+
+        foreach ($items as $item) {
+            $valor_item = ($item->getBaseCalculationPrice() - $item->getBaseDiscountAmount());
+            $valor_item = Mage::helper('core')->currency($valor_item, true, false);
+
+            $lista[] = $item->getName() . ' - ' . (int) $item->getQty() . ' - ' . $valor_item;
+        }
+        if ($this->getQuote()->getIsVirtual()) {
+            $a = $this->getQuote()->getBillingAddress();
+            $b = $this->getQuote()->getShippingAddress();
+        } else {
+            $a = $this->getQuote()->getShippingAddress();
+            $b = $this->getQuote()->getBillingAddress();
+        }
+        $totalArr = $a->getTotals();
+        if ($totalArr['shipping']) {
+            $valor_frete = $totalArr['shipping']->getValue();
+            $lista[] = 'Frete: R$ ' . number_format($valor_frete, 2, ",", ".");
+        }
+        return $lista;
+    }
+    function getPesoProdutosPedido() {
+        $items = $this->getQuote()->getAllVisibleItems();
+        if ($items) {
+            $item_peso = 0;
+            foreach ($items as $item) {
+                $item_peso = $item_peso + round($item->getWeight());
+            }
+        }
+        return $item_peso;
+    }
+}

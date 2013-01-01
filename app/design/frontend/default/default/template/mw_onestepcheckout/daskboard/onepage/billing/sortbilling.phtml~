@@ -191,9 +191,9 @@ if(version_compare(Mage::getVersion(),'1.4.0.1','>=')){
 									</div>
 								</div>';
 					$fax=	'<div class="field">
-									<label for="billing:fax" class="required"><em>'.$this->isstar('fax').'</em>'.$this->__('Celular').'</label>
+									<label for="billing:fax" class="required"><em>'.$this->isstar('fax').'</em>'.$this->__('Fax').'</label>
 									<div class="input-box">
-										<input type="text" name="billing[fax]" value="'.$this->htmlEscape($this->getAddress()->getFax()).'" title="'.$this->__('Celular').'" class="input-text inputtext  '.$this->isrequired('fax').'" id="billing:fax" placeholder="(99)9999-9999"  onkeypress="return txtBoxFormat(this, \'(99)9999-9999\', event);" maxlength="14" />
+										<input type="text" name="billing[fax]" value="'.$this->htmlEscape($this->getAddress()->getFax()).'" title="'.$this->__('Fax').'" class="input-text inputtext  '.$this->isrequired('fax').'" id="billing:fax" placeholder="(99)9999-9999"  onkeypress="return txtBoxFormat(this, \'(99)9999-9999\', event);" maxlength="14" />
 									</div>
 							</div>';
 }

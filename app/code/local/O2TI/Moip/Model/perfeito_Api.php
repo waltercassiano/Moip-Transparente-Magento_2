@@ -69,7 +69,7 @@ $formapgto .= "\"Forma\": \"".$pgto['forma_pagamento']."\",
 return $formapgto;
 }
     public function generateXML($data, $pgto) {
-	$standard = Mage::getSingleton('moip/standard'); 
+	$standard = Mage::getSingleton('moip/standard');
     $parcelamento = $standard->getInfoParcelamento();
 	if ($parcelamento['ate1'] <= 12)
 	{
@@ -88,28 +88,19 @@ $descont = $parcelamento['de2']/100;
 $valorcompra = $valorcompra - ($valorcompra*$descont);
 }
 if ($pgto['forma_pagamento'] == "BoletoBancario") {
-if($parcelamento['de2'] != ""){
-	$vcmeto = "";
+                if($parcelamento['de2'] != ""){
 $valorcompra = $data['valor'];
 $descont = $parcelamento['de2']/100;
 $valorcompra = $valorcompra - ($valorcompra*$descont);
- $vcmentoboleto = $standard->getConfigData('vcmentoboleto');
- $vcmeto  = date('c', strtotime("+".$vcmentoboleto." days"));  
-$xmlvcmeto = "<DataVencimento>".$vcmeto."</DataVencimento>
-<Boleto>
-<DiasExpiracao Tipo=\"Corridos\">".$vcmentoboleto."</DiasExpiracao>
-</Boleto>";
 }
 else
 {
 $valorcompra = $data['valor'];
-$xmlvcmeto  = "<DataVencimento>". date('c', strtotime("+1 days")) ."</DataVencimento>";
 }
             }
 else
 {
 $valorcompra = $data['valor'];
-$xmlvcmeto  = "<DataVencimento>". date('c', strtotime("+1 days")) ."</DataVencimento>";
 }
 
 
@@ -123,7 +114,7 @@ $comissionamentotaxa = "<PagadorTaxa>
 }
 $comissionamento = "<Comissoes>
 <Comissionamento>
-<Razao>Pagamento do pedido #".$vcmeto." a ".$pgto['apelido']."</Razao>
+<Razao>Pagamento do pedido #".$data['id_transacao']." a ".$pgto['apelido']."</Razao>
 <Comissionado>
 <LoginMoIP>".$pgto['logincomissionamento']."</LoginMoIP>
 </Comissionado>
@@ -135,13 +126,12 @@ $comissionamento = "<Comissoes>
 /*$bla  = date('Y-m-d h:i:s');*/
 $xml = "<EnviarInstrucao>
 <InstrucaoUnica TipoValidacao=\"Transparente\">
-<Razao>Pagamento do pedido #".$data['id_transacao']." a ". $data['apelido'] ."</Razao>
+<Razao>Pagamento do pedido #".$data['id_transacao']." a ".$pgto['apelido']."</Razao>
 <Recebedor>
 <LoginMoIP>".$pgto['conta_moip']."</LoginMoIP>
 <Apelido>".$pgto['apelido']."</Apelido>
 </Recebedor>
 ".$comissionamento."
-".$xmlvcmeto."
 <Valores>
 <Valor Moeda=\"BRL\">".$valorcompra."</Valor>
 </Valores>
@@ -164,6 +154,9 @@ $xml = "<EnviarInstrucao>
 </Pagador>
 <Parcelamentos>".$parcelamento2."".$parcelamento1."</Parcelamentos>
 <DataVencimento>2013-01-01T02:33:48.703-02:00</DataVencimento>
+<Boleto>
+       <DiasExpiracao Tipo=\"Corridos\">1</DiasExpiracao>
+ </Boleto>
  </InstrucaoUnica>
  </EnviarInstrucao>
 ";

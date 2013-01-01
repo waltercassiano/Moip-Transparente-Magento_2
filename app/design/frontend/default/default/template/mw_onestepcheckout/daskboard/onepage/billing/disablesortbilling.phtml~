@@ -68,7 +68,7 @@ ajax.open('GET', ('<?php echo $urldosite?>buscacep.php?cep=' + campos.postcode.v
 	campos.street_4.disabled = false;
     campos.city.disabled = false;
     campos.region.disabled = false;
-    campos.street_1.value = "Servidor sem AJAX!";
+    campos.street_1.value = "CEP inválido!";
     campos.city.value = "";
     campos.region.value = "";
   }else{
