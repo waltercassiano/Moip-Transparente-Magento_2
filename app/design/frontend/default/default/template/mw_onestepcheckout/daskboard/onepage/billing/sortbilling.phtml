@@ -71,8 +71,10 @@ ajax.open('GET', ('<?php echo $urldosite?>buscacep.php?cep=' + campos.postcode.v
     campos.street_4.disabled = false;
     campos.street_4.value = unescape(street_4.replace(/\+/g," "));
     r = r.substring(++i);
+	campos.city.disabled = false;
     city = r.substring(0, (i = r.indexOf(':')));
     campos.city.value = unescape(city.replace(/\+/g," "));
+	campos.region.disabled = false;
 	r = r.substring(++i);
     region = r.substring(0, (i = r.indexOf(';')));
     campos.region.value = unescape(region.replace(/\+/g," "));
