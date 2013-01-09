@@ -20,11 +20,16 @@ class O2TI_Moip_Block_Standard_Redirect extends Mage_Core_Block_Abstract {
         try{
                 $order->sendNewOrderEmail();
         } catch (Exception $ex) {  };
+         $oque = $order->getIsVirtual();
+        if ($oque){
+        $shippingId = $order->getBillingAddress()->getId();
+        }
+        else {
         $shippingId = $order->getShippingAddress()->getId();
+         }
         $address = Mage::getModel('sales/order_address')->load($shippingId);
         $urldosite = Mage::getBaseUrl('web', true);
        ?>
-<?php //Full Analytics by Ecomm Solutions uma empresa parceira O2TI ?>
 <script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', '<?php echo $idgoogle ?>']);//google account
