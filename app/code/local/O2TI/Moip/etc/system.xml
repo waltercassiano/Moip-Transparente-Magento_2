@@ -168,6 +168,18 @@
               <show_in_website>1</show_in_website>
               <show_in_store>0</show_in_store>
             </vcmentoboleto>
+            <estoqueboleto translate="label">
+              <label>Permitir compra por boleto apenas e estoque for maior ou igual a:</label>
+												<comment><![CDATA[<br /><div class="custom-options	"><div class="box" style="width:243px;">
+                    <p>Informe a quantidade mínima em estoque que permite ao cliente pagar por boleto.</p>
+                </div></div>]]>
+              </comment>
+              <frontend_type>text</frontend_type>
+              <sort_order>13</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+            </estoqueboleto>
             <nummaxparcelamax translate="label">
               <label>Número Máximo de Parcelas Permitido</label>
               <comment><![CDATA[<br /><div class="custom-options"><div class="box" style="width:243px;">
