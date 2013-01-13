@@ -5,9 +5,9 @@
  * @title      Magento -> Custom Payment Module for Moip (Brazil)
  * @category   Payment Gateway
  * @package    O2TI_Moip
- * @author     MoIP Pagamentos S/a
+ * @author     O2ti solucoes web ldta
  * @copyright  Copyright (c) 2010 MoIP Pagamentos S/A
- * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @license    Autorizado o uso por tempo indeterminado
  */
 class O2TI_Moip_StandardController extends Mage_Core_Controller_Front_Action {
     protected $_order;
@@ -35,14 +35,14 @@ class O2TI_Moip_StandardController extends Mage_Core_Controller_Front_Action {
         $api->setAmbiente($standard->getConfigData('ambiente'));
         $xml = $api->generateXML($fields, $pgtoArray);
         Mage::register('xml', $xml);
-		$formapgto = $api->generateforma($fields, $pgtoArray);
-		Mage::register('formapgto', $formapgto);
-		$formapg = $api->generateformapg($fields, $pgtoArray);
-		Mage::register('formapg', $formapg);
+							$formapgto = $api->generateforma($fields, $pgtoArray);
+							Mage::register('formapgto', $formapgto);
+							$formapg = $api->generateformapg($fields, $pgtoArray);
+							Mage::register('formapg', $formapg);
         $token = $api->getToken($xml);
         $session->setMoipStandardQuoteId($session->getQuoteId());
         Mage::register('token', $token['token']);
-		Mage::register('erro', $token['erro']);
+							Mage::register('erro', $token['erro']);
         Mage::register('StatusPgdireto', $token['pgdireto_status']);
         $this->loadLayout();
 	$this->getLayout()->getBlock('root')->setTemplate('page/1column.phtml');
@@ -93,7 +93,8 @@ class O2TI_Moip_StandardController extends Mage_Core_Controller_Front_Action {
             /**
              * Efetua a mudança do Status
              */
-            $order->loadByIncrementId(ereg_replace("[^0-9]", "", $data['id_transacao']));
+            $login = $standard->getConfigData('conta_moip');
+            $order->loadByIncrementId(ereg_replace($login, "", $data['id_transacao']));
             /*
               const STATE_NEW        = 'new';
               const STATE_PROCESSING = 'processing';
@@ -176,7 +177,8 @@ class O2TI_Moip_StandardController extends Mage_Core_Controller_Front_Action {
             $order->load(Mage::getSingleton('checkout/session')->getLastOrderId());
             if ($order->getId()) {
             }
-            Zend_Debug::dump('Processo de retorno concluido!');
+            
+            Zend_Debug::dump('Pagamento atualizado');
         }
     }
     private function getStatusPagamentoMoip($param) {
