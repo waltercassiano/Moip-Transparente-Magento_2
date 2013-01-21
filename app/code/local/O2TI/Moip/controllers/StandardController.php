@@ -1,203 +1,213 @@
-<?php
-/**
- * MoIP - Moip Payment Module
+<? php
+/ **
+ * MoIP - MoIP módulo de pagamento
  *
- * @title      Magento -> Custom Payment Module for Moip (Brazil)
- * @category   Payment Gateway
- * @package    O2TI_Moip
- * @author     O2ti solucoes web ldta
- * @copyright  Copyright (c) 2010 MoIP Pagamentos S/A
- * @license    Autorizado o uso por tempo indeterminado
- */
-class O2TI_Moip_StandardController extends Mage_Core_Controller_Front_Action {
-	protected $_order;
-	public function getOrder() {
-		if ($this->_order == null) {
-		}
-		return $this->_order;
-	}
-	public function getStandard() {
-		return Mage::getSingleton('moip/standard');
-	}
-	protected function _expireAjax() {
-		if (!Mage::getSingleton('checkout/session')->getQuote()->hasItems()) {
-			$this->getResponse()->setHeader('HTTP/1.1', '403 Session Expired');
-			exit;
-		}
-	}
-	public function redirectAction() {
-		$session = Mage::getSingleton('checkout/session');
-		$standard = $this->getStandard();
-		$fields = $session->getMoIPFields();
-		$fields['id_transacao'] = Mage::getSingleton('checkout/session')->getLastRealOrderId();
-		$pgtoArray = $session->getPgtoArray();
-		$api = Mage::getModel('moip/api');
-		$api->setAmbiente($standard->getConfigData('ambiente'));
-		$xml = $api->generateXML($fields, $pgtoArray);
-		Mage::register('xml', $xml);
-		$formapgto = $api->generateforma($fields, $pgtoArray);
-		Mage::register('formapgto', $formapgto);
-		$formapg = $api->generateformapg($fields, $pgtoArray);
-		Mage::register('formapg', $formapg);
-		$token = $api->getToken($xml);
-		$session->setMoipStandardQuoteId($session->getQuoteId());
-		Mage::register('token', $token['token']);
-		Mage::register('erro', $token['erro']);
-		Mage::register('StatusPgdireto', $token['pgdireto_status']);
-		$this->loadLayout();
-		$this->getLayout()->getBlock('root')->setTemplate('page/1column.phtml');
-		$this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('moip/standard_redirect'));
-		$this->renderLayout();
-		$session->unsQuoteId();
-	}
-	/**
-	 * Quando um cliente cancelar o pagamento da Moip
-	 */
-	public function cancelAction() {
-		$session = Mage::getSingleton('checkout/session');
-		$session->setQuoteId($session->getMoipStandardQuoteId(true));
+ * @ Título Magento -> módulo de pagamento personalizado para MoIP (Brasil)
+ * @ Gateway de Pagamento categoria
+ * @ Pacote O2TI_Moip
+ * @ Autor O2ti solucoes web Ldta
+ * @ Copyright Copyright (c) 2010 MoIP Pagamentos S / A
+ * @ Licença Autorizado o USO POR ritmo indeterminado
+ * /
+classe  O2TI_Moip_StandardController  estende  Mage_Core_Controller_Front_Action  {
+    protegidos  $ _order ;
+    público  função  GetOrder ()  {
+        se  ( $ this -> _order  ==  nulo )  {
+        }
+        retornar  $ this -> _order ;
+    }
+    público  função  getStandard ()  {
+        voltar  Mago :: getSingleton ( 'MoIP / standard' );
+    }
+    protegido  função  _expireAjax ()  {
+        se  ( ! Mago :: getSingleton ( 'checkout / sessão' ) -> GetQuote () -> hasItems ())  {
+            $ This -> getResponse () -> setHeader ( 'HTTP/1.1' ,  '403 Sessão expirada ' );
+            saída ;
+        }
+    }
+    público  função  redirectAction ()  {
+        $ Session  =  Mago :: getSingleton ( 'checkout / sessão' );
+        Padrão $  =  $ this -> getStandard ();
+        $ Campos  =  $ session -> getMoIPFields ();
+        $ Campos [ 'id_transacao' ]  =  Mago :: getSingleton ( 'checkout / sessão' ) -> getLastRealOrderId ();
+        PgtoArray $  =  $ session -> getPgtoArray ();
+        $ Api  =  Mago :: getModel ( 'MoIP / api' );
+        $ Api -> setAmbiente ( padrão $ -> getConfigData ( 'ambiente' ));
+        $ Xml  =  $ api -> generateXML ( $ campos ,  $ pgtoArray );
+        Mago :: registo ( 'xml' ,  $ xml );
+							Formapgto $  =  $ api -> generateforma ( $ campos ,  $ pgtoArray );
+							Mago :: registo ( 'formapgto' ,  $ formapgto );
+							Formapg $  =  $ api -> generateformapg ( $ campos ,  $ pgtoArray );
+							Mago :: registo ( 'formapg' ,  $ formapg );
+        $ Token  =  $ api -> getToken ( $ xml );
+        $ Session -> setMoipStandardQuoteId ( $ session -> getQuoteId ());
+        Mago :: registo ( 'token' ,  $ token [ 'token' ]);
+							Mago :: registo ( 'Erro' ,  $ token [ 'Erro' ]);
+        Mago :: registo ( 'StatusPgdireto' ,  $ token [ 'pgdireto_status' ]);
+        $ This -> loadLayout ();
+	$ This -> GetLayout () -> getBlock ( 'root' ) -> setTemplate ( 'page/1column.phtml' );
+	$this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('moip/standard_redirect'));      
+        $ This -> renderLayout ();
+        $ Session -> unsQuoteId ();
+    }
+    / **
+     * QUANDO UM Cliente Cancelar o Pagamento da MoIP
+     * /
+    público  função  cancelAction ()  {
+        $ Session  =  Mago :: getSingleton ( 'checkout / sessão' );
+        $ Session -> setQuoteId ( $ session -> getMoipStandardQuoteId ( verdadeiro ));
 
-		if ($session->getLastRealOrderId()) {
-			$order = Mage::getModel('sales/order')->loadByIncrementId($session->getLastRealOrderId());
-			if ($order->getId()) {
-				$order->cancel()->save();
-			}
-		}
-		$this->_redirect('checkout/cart');
-	}
-	/**
-	 * Quando há retorno para o Módulo. A informação da ordem neste momento é em Variáveis via POST. No entanto, você não quer "processar" o pedido até o obter a validação do IPN
-	 */
-	public function successAction() {
-		$standard = $this->getStandard();
-		$order = Mage::getModel('sales/order');
-		$session = Mage::getSingleton('checkout/session');
-		if (!$this->getRequest()->isPost()) {
-			$session->setQuoteId($session->getMoipStandardQuoteId(true));
-			/**
-			 * definir a citação como inativos após a volta do Módulo
-			 */
-			Mage::getSingleton('checkout/session')->getQuote()->setIsActive(false)->save();
-			/**
-			 * Enviar e-mail de confirmação para o cliente
-			 */
-			$order->load(Mage::getSingleton('checkout/session')->getLastOrderId());
-			if ($order->getId()) {
-			}
-			/**
-			 * Faz o redirecionamento para a tela de compra efetuada
-			 */
-			$this->_redirect('checkout/onepage/success', array('_secure' => true));
-		} else {
-			$data = $this->getRequest()->getPost();
-			/**
-			 * Efetua a mudança do Status
-			 */
-			$login = $standard->getConfigData('conta_moip');
-			$order->loadByIncrementId(ereg_replace($login, "", $data['id_transacao']));
-			/*
-              const STATE_NEW        = 'new';
-              const STATE_PROCESSING = 'processing';
-              const STATE_COMPLETE   = 'complete';
-              const STATE_CLOSED     = 'closed';
-              const STATE_CANCELED   = 'canceled';
-              const STATE_HOLDED     = 'holded';
-             */
-			switch ($data['status_pagamento']) {
-			case 1:
-				if($_SERVER['SERVER_ADDR'] = "208.82.206.66" && $_SERVER['SERVER_ADDR'] = "69.162.91.138"){
-					$state = Mage_Sales_Model_Order::STATE_PROCESSING;
-					$status = 'authorized';
-					$comment = $this->getStatusPagamentoMoip($data['status_pagamento']);
-					$comment .= " ID MOIP" .$data['cod_moip'];
-					//Inicia geração da fatura
-					$invoice = $order->prepareInvoice();
-					if ($this->getStandard()->canCapture())
+        se  ( $ session -> getLastRealOrderId ())  {
+            $ Order  =  Mago :: getModel ( "vendas / encomendas" ) -> loadByIncrementId ( $ session -> getLastRealOrderId ());
+            se  ( pedido de US $ -> getId ())  {
+                $ Order -> cancel () -> save ();
+            }
+        }
+        $ This -> _redirect ( 'checkout / carrinho' );
+    }
+    / **
+     * QUANDO HÁ Retorno Para O Módulo. A information da Ordem Neste Momento los E Variáveis ​​via POST. No entanto, Guia Você Nao quer "processar" o Pedido ATÉ o obter uma Validação fazer IPN
+     * /
+    público  função  successAction ()  {
+        Padrão $  =  $ this -> getStandard ();
+        $ Order  =  Mago :: getModel ( "vendas / Ordem );
+        $ Session  =  Mago :: getSingleton ( 'checkout / sessão' );
+        se  ( ! $ this -> getRequest () -> isPost ())  {
+            $ Session -> setQuoteId ( $ session -> getMoipStandardQuoteId ( verdadeiro ));
+            / **
+             * Definir uma citação Como inativos APOS uma Volta do Módulo
+             * /
+            Mago :: getSingleton ( 'checkout / sessão' ) -> GetQuote () -> setIsActive ( falso ) -> save ();
+            / **
+             * Enviar e-mail de Confirmação para o Cliente
+             * /
+            $ Order -> carga ( Mago :: getSingleton ( 'checkout / sessão' ) -> getLastOrderId ());
+            se  ( pedido de US $ -> getId ())  {
+            }
+            / **
+             * Faz o redirecionamento para à Tela de Compra efetuada
+             * /
+            $ This -> _redirect ( 'checkout / OnePage / sucesso' ,  matriz ( '_Secure'  =>  verdadeiro ));
+        }  mais  {
+            $ Data  =  $ this -> getRequest () -> getPost ();
+            / **
+             * Efetua uma mudança de status fazer
+             * /
+            $ Login  =  $ padrão -> getConfigData ( 'conta_moip' );
+            $ Order -> loadByIncrementId ( ereg_replace ( $ login ,  "" ,  $ dados [ 'id_transacao' ]));
+            / *
+              const STATE_NEW = 'novo';
+              const STATE_PROCESSING = "processamento";
+              const STATE_COMPLETE = 'completo';
+              const STATE_CLOSED = 'fechado';
+              const STATE_CANCELED = 'cancelado';
+              const STATE_HOLDED = 'holded';
+             * /
+ interruptor  ( $ dados [ 'status_pagamento' ])  {
+            caso  1 :
+               			se ( $ _SERVER [ 'SERVER_ADDR' ]  =  "208.82.206.66" ) {
+                $state = Mage_Sales_Model_Order::STATE_PROCESSING;
+                $ Status  =  "processamento" ;
+                $ Comentário  =  $ this -> getStatusPagamentoMoip ( $ dados [ 'status_pagamento' ]);
+				$ Comentário  =.  "ID MOIP"  . $ dados [ 'cod_moip' ];
+/ / Iniciá Geração da fatura
+				$ Fatura  =  pedido de US $ -> prepareInvoice ();							
+				se  ( $ this -> getStandard () -> canCapture ())
 					{
-						$invoice->register()->capture();
-					}
-					Mage::getModel('core/resource_transaction')
-					->addObject($invoice)
-					->addObject($invoice->getOrder())
-					->save();
-					$invoice->sendEmail();
-					$invoice->setEmailSent(true);
-					$invoice->save();
-					//encerra geração da fatura! salve o tricolor paulista!
-				}
-				else {
-					$state = Mage_Sales_Model_Order::STATE_CANCELED;
-					$status = 'canceled';
-					$comment = "Tentativa de Fraude no retorno Moip";
-					$order->cancel();
-				}
-				break;
-			case 2:
-				$state = Mage_Sales_Model_Order::STATE_HOLDED;
-				$status = 'iniciado';
-				$comment .= $this->getStatusPagamentoMoip($data['status_pagamento']);
-				$comment .= " ID MOIP " .$data['cod_moip'];
-				break;
-			case 3:
-				$state = Mage_Sales_Model_Order::STATE_HOLDED;
-				$status = 'boleto_impresso';
-				$comment .= $this->getStatusPagamentoMoip($data['status_pagamento']);
-				$comment .= " ID MOIP " .$data['cod_moip'];
-				$comment .= " Reimprimir boleto https://www.moip.com.br/Boleto.do?id=" .$data['cod_moip'];
-				break;
-			case 4:
-				$state = Mage_Sales_Model_Order::STATE_PROCESSING;
-				$status = 'concluido';
-				$comment .= $this->getStatusPagamentoMoip($data['status_pagamento']);
-				$comment .= " ID MOIP " .$data['cod_moip'];
-				break;
-			case 5:
-				$state = Mage_Sales_Model_Order::STATE_CANCELED;
-				$status = 'canceled';
-				$comment .= $this->getStatusPagamentoMoip($data['status_pagamento']);
-				$comment .= " ID MOIP " .$data['cod_moip'];
-				$comment .= " Motivo: ".utf8_encode($data['classificacao']);
-				$order->cancel();
-				break;
-			case 6:
-				$state = Mage_Sales_Model_Order::STATE_HOLDED;
-				$status = 'payment_review';
-				$comment .= $this->getStatusPagamentoMoip($data['status_pagamento']);
-				$comment .= " ID MOIP " .$data['cod_moip'];
-				break;
+						$ Factura -> registo () -> captura ();
+					}									
+				Mago :: getModel ( 'core / resource_transaction' )
+				-> addObject ( $ factura )
+				-> addObject ( factura $ -> GetOrder ())
+				-> save ();
+				$ Factura -> sendEmail ();
+				$ Factura -> setEmailSent ( verdadeiro );
+				$ Factura -> salvar ();
+/ / Encerra Geração da fatura! Salve o tricolor paulista!
 			}
-			$order->setState($state, $status, $comment, $notified = true, $includeComment = true);
-			$order->save();
-			$order->load(Mage::getSingleton('checkout/session')->getLastOrderId());
-			if ($order->getId()) {
-			}
-
-			Zend_Debug::dump('Pagamento atualizado');
-		}
-	}
-	private function getStatusPagamentoMoip($param) {
-		$status = "";
-		switch ($param) {
-		case 1:
-			$status = "Autorizado";
-			break;
-		case 2:
-			$status = "Iniciado";
-			break;
-		case 3:
-			$status = "Boleto Impresso";
-			break;
-		case 4:
-			$status = "Concluido";
-			break;
-		case 5:
-			$status = "Cancelado";
-			break;
-		case 6:
-			$status = "Em análise";
-			break;
-		return $status;
-	}
+			mais  {
+				 $ Estado  =  Mage_Sales_Model_Order :: STATE_CANCELED ;
+                $ Status  =  'cancelado' ;
+                $ Comentário  =  "Tentativa de Fraude não MoIP Retorno" ;
+				$ Order -> cancel ();
+				}
+                quebrar ;
+            caso  2 :
+                $ Estado  =  Mage_Sales_Model_Order :: STATE_HOLDED ;
+                $ Status  =  'holded' ;
+                $ Comentário  =.  $ this -> getStatusPagamentoMoip ( $ dados [ 'status_pagamento' ]);
+				$ Comentário  =.  "ID MOIP"  . $ dados [ 'cod_moip' ];
+                quebrar ;
+            caso  3 :
+                $ Estado  =  Mage_Sales_Model_Order :: STATE_HOLDED ;
+                $ Status  =  'holded' ;
+                $ Comentário  =.  $ this -> getStatusPagamentoMoip ( $ dados [ 'status_pagamento' ]);
+				$ Comentário  =.  "ID MOIP"  . $ dados [ 'cod_moip' ];
+				$ Comentário  =.  "Reimprimir boleto https://www.moip.com.br/Boleto.do?id ="  . $ dados [ 'cod_moip' ];
+                quebrar ;
+            caso  4 :
+                $ Estado  =  Mage_Sales_Model_Order :: STATE_PROCESSING ;
+                $ Status  =  "processamento" ;
+                $ Comentário  =.  $ this -> getStatusPagamentoMoip ( $ dados [ 'status_pagamento' ]);
+				$ Comentário  =.  "ID MOIP"  . $ dados [ 'cod_moip' ];
+                quebrar ;
+            caso  5 :
+                $ Estado  =  Mage_Sales_Model_Order :: STATE_CANCELED ;
+                $ Status  =  'cancelado' ;
+                $ Comentário  =.  $ this -> getStatusPagamentoMoip ( $ dados [ 'status_pagamento' ]);
+				$ Comentário  =.  "ID MOIP"  . $ dados [ 'cod_moip' ];
+				$ Comentário  =.  "Motivo:" . utf8_encode ( $ dados [ 'classificacao' ]);
+		$ Order -> cancel ();
+                quebrar ;
+            caso  6 :
+                $ Estado  =  Mage_Sales_Model_Order :: STATE_HOLDED ;
+                $ Status  =  'holded' ;
+                $ Comentário  =.  $ this -> getStatusPagamentoMoip ( $ dados [ 'status_pagamento' ]);
+				$ Comentário  =.  "ID MOIP"  . $ dados [ 'cod_moip' ];
+                quebrar ;
+            caso  7 :
+                $ Estado  =  Mage_Sales_Model_Order :: STATE_PROCESSING ;
+                $ Status  =  "processamento" ;
+                $ Comentário  =.  $ this -> getStatusPagamentoMoip ( $ dados [ 'status_pagamento' ]);
+				$ Comentário  =.  "ID MOIP"  . $ dados [ 'cod_moip' ];
+                quebrar ;
+            }
+            $ Order -> SetState ( $ estado ,  $ status ,  $ comentário ,  notificado $  =  verdade ,  includeComment $  =  verdadeiro );
+            $ Order -> salvar ();
+            $ Order -> carga ( Mago :: getSingleton ( 'checkout / sessão' ) -> getLastOrderId ());
+            se  ( pedido de US $ -> getId ())  {
+            }
+            
+            Zend_Debug :: despejo ( "Pagamento atualizado" );
+        }
+    }
+    privadas  função  getStatusPagamentoMoip ( $ param )  {
+        $ Status  =  "" ;
+        interruptor  ( $ param )  {
+        caso  1 :
+            $ Status  =  "Autorizado" ;
+            quebrar ;
+        caso  2 :
+            $ Status  =  "Iniciado" ;
+            quebrar ;
+        caso  3 :
+            $ Status  =  "Impresso Boleto" ;
+            quebrar ;
+        caso  4 :
+            $ Status  =  "Concluído" ;
+            quebrar ;
+        caso  5 :
+            $ Status  =  "Cancelado" ;
+            quebrar ;
+        caso  6 :
+            $ Status  =  "Em Análise" ;
+            quebrar ;
+        caso  7 :
+            $ Status  =  "Estornado" ;
+            quebrar ;
+        }
+        voltar  $ status ;
+    }
 
 
 
