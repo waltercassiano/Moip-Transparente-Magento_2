@@ -93,8 +93,9 @@ class O2TI_Moip_StandardController extends Mage_Core_Controller_Front_Action {
             /**
              * Efetua a mudança do Status
              */
-            $login  =  $standard->getConfigData( 'conta_moip' );
-            $order->loadByIncrementId(ereg_replace($login, "", $data['id_transacao']));
+ 		$login = $standard->getConfigData('conta_moip');
+            	$order->loadByIncrementId(ereg_replace($login, "", $data['id_transacao']));
+          
             /*
               const STATE_NEW        = 'new';
               const STATE_PROCESSING = 'processing';
