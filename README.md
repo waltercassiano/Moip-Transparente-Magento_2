@@ -1,4 +1,5 @@
 INSTRUÇÕES:
+
 Recomendamos que primeiramente realize back-up completo do seu site, banco e dados e
  arquivos. A o2ti não se responsabiliza por quaisquer danos ou prejuízos financeiros
 decorrentes do uso ou instalação de nossas soluções. Não garantimos a compatibilidade deste
