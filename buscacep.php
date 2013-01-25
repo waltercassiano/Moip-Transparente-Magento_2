@@ -91,7 +91,8 @@ $dados['cidade'] = trim($dados['cidade/uf'][0]);
 $dados['uf'] = trim($dados['cidade/uf'][1]);
 unset($dados['cidade/uf']);
 if($dados['logradouro'] != ""){
-         $texto = $dados['tipo_logradouro']." ".$dados['logradouro'].":".$dados['bairro'].":".$dados['cidade'].":".$dados['uf'].";";
+         $separa_end = explode('- de', $dados['logradouro']);
+         $texto = $dados['tipo_logradouro']." ".$separa_end[0].":".$dados['bairro'].":".$dados['cidade'].":".$dados['uf'].";";
 }
 else {
 	           $texto = " :Bairro".$dados['bairro'].":".$dados['cidade'].":".$dados['uf'].";";
