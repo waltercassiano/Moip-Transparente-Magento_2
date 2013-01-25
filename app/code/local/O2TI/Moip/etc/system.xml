@@ -9,7 +9,7 @@
           <sort_order>420</sort_order><!-- position between other payment methods -->
           <show_in_default>1</show_in_default><!-- do not show this configuration options in store scope -->
           <show_in_website>1</show_in_website>
-          <show_in_store>0</show_in_store>
+          <show_in_store>1</show_in_store>
           <fields>
             <active translate="label"><!-- is this payment method active for the website? -->
               <label>Enabled</label><!-- label for the field -->
@@ -18,7 +18,7 @@
               <sort_order>1</sort_order><!-- field position -->
               <show_in_default>1</show_in_default><!-- do not show this field in store scope -->
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </active>
 
             <title translate="label">
@@ -27,7 +27,7 @@
               <sort_order>2</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </title>
 
             <order_status translate="label">
@@ -37,7 +37,7 @@
               <sort_order>3</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </order_status>
 
 
@@ -61,7 +61,7 @@
               <sort_order>5</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </apelido>
             <idgoogle translate="label">
               <label>ID da conta google</label>
@@ -69,7 +69,7 @@
               <sort_order>5</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </idgoogle>
  <tipoderecebimento translate="label">
               <label>Receber o valor do parcelamento à vista?</label>
@@ -82,7 +82,7 @@
               <sort_order>6</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </tipoderecebimento>
             <pagamento_direto translate="label">
               <label>Usar Transparente</label>
@@ -91,7 +91,7 @@
               <sort_order>6</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </pagamento_direto>
 
             <formas_pagamento translate="label">
@@ -101,7 +101,7 @@
               <sort_order>7</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </formas_pagamento>
 
             <parcelamento translate="label">
@@ -111,7 +111,7 @@
               <sort_order>8</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </parcelamento>
 
             <parcelamento_de1 translate="label">
@@ -120,7 +120,7 @@
               <sort_order>10</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </parcelamento_de1>
 
             <parcelamento_ate1 translate="label">
@@ -129,7 +129,7 @@
               <sort_order>11</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </parcelamento_ate1>
 
             <parcelamento_juros1 translate="label">
@@ -142,7 +142,7 @@
               <sort_order>12</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </parcelamento_juros1>
             <parcelamento_de2 translate="label">
               <label>Desconto para boleto:</label>
@@ -154,7 +154,7 @@
               <sort_order>13</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </parcelamento_de2>
             <vcmentoboleto translate="label">
               <label>Dias de Vencimento para o Boleto:</label>
@@ -166,7 +166,7 @@
               <sort_order>13</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </vcmentoboleto>
             <estoqueboleto translate="label">
               <label>Permitir compra por boleto apenas e estoque for maior ou igual a:</label>
@@ -178,7 +178,7 @@
               <sort_order>13</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </estoqueboleto>
             <nummaxparcelamax translate="label">
               <label>Número Máximo de Parcelas Permitido</label>
@@ -190,7 +190,7 @@
               <sort_order>14</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </nummaxparcelamax>
             <valorminimoparcela translate="label">
               <label>Valor Mínimo das Parcelas</label>
@@ -202,7 +202,7 @@
               <sort_order>15</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </valorminimoparcela>
           
 
@@ -214,7 +214,7 @@
               <sort_order>19</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </ambiente>
 
             <allowspecific translate="label">
@@ -251,7 +251,7 @@
               <sort_order>22</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </comissionamento>
             <logincomissionamento translate="label">
               <label>Login de Comissionamento</label>
@@ -259,7 +259,7 @@
               <sort_order>23</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </logincomissionamento>
             <porc_comissionamento translate="label">
               <label>Porcentagem de Comissionamento</label>
@@ -267,7 +267,7 @@
               <sort_order>24</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </porc_comissionamento>
             <pagadordataxa translate="label">
               <label>É o comissionado deverá pagar a taxa MoIP</label>
@@ -280,7 +280,7 @@
               <sort_order>25</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
-              <show_in_store>0</show_in_store>
+              <show_in_store>1</show_in_store>
             </pagadordataxa>
           </fields>
         </o2ti_moip_standard>
