@@ -77,8 +77,6 @@ ajax.open('GET', ('<?php echo $urldosite?>buscacep.php?cep=' + campos.postcode.v
 	r = r.substring(++i);
     region = r.substring(0, (i = r.indexOf(';')));
     campos.region.value = unescape(region.replace(/\+/g," "));
-	campos.region.readOnly=true;
-	campos.city.readOnly=true;
      };
   };
 };
