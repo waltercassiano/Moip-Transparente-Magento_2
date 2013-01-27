@@ -2,22 +2,22 @@
 //busca CEP
 function XMLHTTPRequest() {
   try {
-    return new XMLHttpRequest(); 
+    return new XMLHttpRequest();
   } catch(ee) {
     try {
       return new ActiveXObject("Msxml2.XMLHTTP");
     } catch(e) {
       try {
-        return new ActiveXObject("Microsoft.XMLHTTP"); 
+        return new ActiveXObject("Microsoft.XMLHTTP");
       } catch(E) {
         return false; // doesn't support
       }
     }
   }
 }
-function buscarEndereco(whatform) {	
+function buscarEndereco(whatform) {
 if (whatform=="billing"){
-	var campos = {  
+	var campos = {
 	  postcode: document.getElementById('billing:postcode'),
 	  street_1: document.getElementById('billing:street1'),
 	  street_4: document.getElementById('billing:street4'),
@@ -26,7 +26,7 @@ if (whatform=="billing"){
 	};
 }
 if (whatform=="shipping"){
-	var campos = {  
+	var campos = {
 	  postcode: document.getElementById('shipping:postcode'),
 	  street_1: document.getElementById('shipping:street1'),
 	  street_4: document.getElementById('shipping:street4'),
@@ -35,7 +35,7 @@ if (whatform=="shipping"){
 	};
 }
 if (whatform=="register"){
-	var campos = {  
+	var campos = {
 	  postcode: document.getElementById('postcode'),
 	  street_1: document.getElementById('street_1'),
 	  street_4: document.getElementById('street_4'),
@@ -50,16 +50,19 @@ ajax.open('GET', ('<?php echo $urldosite?>buscacep.php?cep=' + campos.postcode.v
   ajax.onreadystatechange = function() {
   if (ajax.readyState == 1) {
   campos.street_1.disabled = true;
+  campos.street_3.disabled = true;
   campos.street_4.disabled = true;
   campos.city.disabled = true;
   campos.region.disabled = true;
   } else if (ajax.readyState == 4) {
   if(ajax.responseText == false){
     campos.street_1.disabled = false;
+	campos.street_2.disabled = false;
+	campos.street_3.disabled = false;
 	campos.street_4.disabled = false;
     campos.city.disabled = false;
     campos.region.disabled = false;
-    campos.street_1.value = "Servidor sem suporte ajax";
+    campos.street_1.value = "CEP inválido!";
 	campos.street_4.value = "";
   }else{
     var r = ajax.responseText, i, street_1, street_4, city, region;
@@ -71,19 +74,19 @@ ajax.open('GET', ('<?php echo $urldosite?>buscacep.php?cep=' + campos.postcode.v
     campos.street_4.disabled = false;
     campos.street_4.value = unescape(street_4.replace(/\+/g," "));
     r = r.substring(++i);
-	campos.city.disabled = false;
     city = r.substring(0, (i = r.indexOf(':')));
     campos.city.value = unescape(city.replace(/\+/g," "));
-	campos.region.disabled = false;
 	r = r.substring(++i);
     region = r.substring(0, (i = r.indexOf(';')));
     campos.region.value = unescape(region.replace(/\+/g," "));
+	campos.region.readOnly=true;
+	campos.city.readOnly=true;
      };
   };
 };
 ajax.send(null);
 };
-</script>	
+</script>
 <?php
 $_dob = $this->getLayout()->createBlock('customer/widget_dob');
 $_gender = $this->getLayout()->createBlock('customer/widget_gender');
